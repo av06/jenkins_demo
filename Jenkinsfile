@@ -75,6 +75,7 @@ sshTransfer(execCommand: "/bin/python3 lint.py")
 ]
 )
 ]
+)
 }
 }
 
