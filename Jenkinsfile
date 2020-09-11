@@ -51,6 +51,33 @@ pipeline {
 	    //     // }
 	    // }    
 	}
+
+		/*Deploy the application*/
+stage('deploy'){
+steps([$class: 'BapSshPromotionPublisherPlugin']) {
+sshPublisher(
+continueOnError: false, failOnError: true,
+publishers: [
+sshPublisherDesc(
+configName: "akhil-21039-jenkins",
+verbose: true,
+transfers: [
+//sshTransfer(execCommand: "/bin/rm -rf app"),
+//sshTransfer(execCommand: "/bin/mkdir app"),
+//sshTransfer(sourceFiles: "*",),
+//sshTransfer(execCommand: "/bin/mkdir app/templates"),
+//sshTransfer(sourceFiles: "templates/*",),
+sshTransfer(execCommand: "/bin/python3 -m virtualenv env"),
+sshTransfer(execCommand: ". env/bin/activate"),
+sshTransfer(execCommand: "/bin/pip3 install -r app/requirements.txt --user")
+sshTransfer(execCommand: "/bin/python3 lint.py")
+//sshTransfer(execCommand: "/bin/python3 app/app.py &")
+]
+)
+]
+}
+}
+
     }
 }
 
