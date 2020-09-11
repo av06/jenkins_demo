@@ -59,7 +59,7 @@ sshPublisher(
 continueOnError: false, failOnError: true,
 publishers: [
 sshPublisherDesc(
-configName: "akhil-21039-jenkins",
+configName: "akhil_21039_jenkins",
 verbose: true,
 transfers: [
 //sshTransfer(execCommand: "/bin/rm -rf app"),
