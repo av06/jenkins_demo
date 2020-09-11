@@ -25,7 +25,7 @@ pipeline {
 		withEnv(["HOME=${env.WORKSPACE}"]) {
 		    echo '#####-Beginnig Build-#####'
 		    sh 'python3 -m virtualenv my_env'   // Setting Up Python Virtual Environment
-		    sh 'source my_env/bin/activate'   // Activating Python Virtual Environment
+		    sh '. my_env/bin/activate'   // Activating Python Virtual Environment
 		    sh 'pip3 install --user -r requirements.txt'   // Installing Required Python Modules
 		    echo '#####-Build Complete-#####'
 		}
