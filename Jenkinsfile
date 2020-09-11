@@ -68,10 +68,10 @@ transfers: [
 //sshTransfer(execCommand: "/bin/mkdir app/templates"),
 //sshTransfer(sourceFiles: "templates/*",),
 sshTransfer(execCommand: "cd jenkins_demo"),
-sshTransfer(execCommand: "/bin/python3 -m virtualenv env"),
+sshTransfer(execCommand: "python3 -m virtualenv env"),
 sshTransfer(execCommand: ". env/bin/activate"),
-sshTransfer(execCommand: "/bin/pip3 install -r app/requirements.txt --user"),
-sshTransfer(execCommand: "/bin/python3 lint.py")
+sshTransfer(execCommand: "pip3 install -r app/requirements.txt --user"),
+sshTransfer(execCommand: "python3 lint.py")
 //sshTransfer(execCommand: "/bin/python3 app/app.py &")
 ]
 )
