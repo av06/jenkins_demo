@@ -70,7 +70,7 @@ transfers: [
 sshTransfer(execCommand: "cd jenkins_demo"),
 sshTransfer(execCommand: "python3 -m virtualenv env"),
 sshTransfer(execCommand: ". env/bin/activate"),
-sshTransfer(execCommand: "pip3 install -r app/requirements.txt --user"),
+sshTransfer(execCommand: "pip3 install -r requirements.txt --user"),
 sshTransfer(execCommand: "python3 lint.py")
 //sshTransfer(execCommand: "/bin/python3 app/app.py &")
 ]
